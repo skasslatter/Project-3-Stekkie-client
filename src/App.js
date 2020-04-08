@@ -13,28 +13,11 @@ import Login from "./pages/Login";
 class App extends React.Component {
   constructor(){
     super()
-    this.state = {
-      users: []
-    }
   }
-  componentDidMount() {
-    axios.get("http://localhost:3000/")
-     .then(response => {
-       let users = response.data
-       console.log(users)
-       this.setState({users: users})
-     })
-}
   render () {
-    let users = this.state.users
   return (
     <div className="App">
       <Nav />
-        {users.map((user) => {
-          return (
-            <h1>{user.name}</h1>
-          )
-        })}
       <Switch>
         <Route exact path="/" component={Homepage}/>
         <Route path="/signup" component={Signup}/>
