@@ -1,0 +1,25 @@
+.section-padding {
+  padding: 20px 0;
+}
+
+.bottom {
+  background-color: #428756;
+}
+
+.copyright {
+  color: #e5e5e5;
+  font-weight: 600;
+}
+
+
+.bottom p {
+  margin-bottom: 0;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+footer {
+  margin-top: auto !important;
+  padding: 0 !important;
+}
