@@ -11,8 +11,8 @@ export const login = (user) => {
   return axios({
     method: "POST",
     url: "login",
-    headers: { "content-type": "application/json" },
-    data: user,
+    headers: { "content-type": "application/x-www-form-urlencoded" },
+    data: qs.stringify(user),
   }).then((response) => {
     setUser(response.data);
   });
@@ -22,8 +22,8 @@ export const signup = (user) => {
   return axios({
     method: "POST",
     url: "signup",
-    headers: { "content-type": "application/json" },
-    data: user,
+    headers: { "content-type": "application/x-www-form-urlencoded" },
+    data: qs.stringify(user),
   }).then((response) => {
     setUser(response.data);
   });
