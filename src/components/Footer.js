@@ -6,11 +6,11 @@ export default class Footer extends React.Component {
     render(){
         return (
             <footer id="sticky-footer">
-            <div class="bottom section-padding">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <div class="copyright">
+            <div className="bottom section-padding">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12 text-center">
+                            <div className="copyright">
                                 <p>© Copyright Yvana and Sybille. All rights reserved.</p>
                             </div>
                         </div>
