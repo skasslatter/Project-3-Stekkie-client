@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 
 
 class App extends React.Component {
@@ -22,6 +23,7 @@ class App extends React.Component {
         <Route exact path="/" component={Homepage}/>
         <Route path="/signup" component={Signup}/>
         <Route path="/login" component={Login}/>
+        <Route path="/profile" component={Profile}/>
       </Switch>
       <Footer />
     </div>
