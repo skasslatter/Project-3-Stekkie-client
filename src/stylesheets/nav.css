@@ -1,4 +1,16 @@
 .nav {
   background-color: #428756;
   color: white;
+  justify-content: space-around;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+.nav a{
+  color:white;
+  text-decoration: none;
+}
+
+.home-icon {
+  height: 2vh;
 }

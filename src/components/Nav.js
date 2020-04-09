@@ -27,7 +27,12 @@ class Nav extends React.Component {
               <Link to="/signup">Signup</Link>
             </div>
             <div>
-              <Link to="/">Home</Link>
+              <Link to="/login">
+                <img
+                  className="home-icon"
+                  src="/pngkey.com-home-png-2373015 copy.png"
+                ></img>
+              </Link>
             </div>
             <div>
               <Link to="/login">Login</Link>
@@ -39,7 +44,12 @@ class Nav extends React.Component {
               <p>Welcome {user.username}</p>
             </div>
             <div>
-              <Link to="/">Home</Link>
+              <Link to="/">
+                <img
+                  className="home-icon"
+                  src="/pngkey.com-home-png-2373015 copy.png"
+                ></img>
+              </Link>
             </div>
             <div>
               <p onClick={this.logoutUser}>Logout</p>

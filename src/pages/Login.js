@@ -63,7 +63,7 @@ class Login extends Component {
           />
         </div>
 
-        <button className="btn-primary btn" onClick={this.handleLoginClick}>
+        <button className="btn-success btn" onClick={this.handleLoginClick}>
           Login
           </button>
       </div>
