@@ -44,7 +44,7 @@ class Nav extends React.Component {
               <p>Welcome {user.username}</p>
             </div>
             <div>
-              <Link to="/">
+              <Link to="/profile">
                 <img
                   className="home-icon"
                   src="/pngkey.com-home-png-2373015 copy.png"
