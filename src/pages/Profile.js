@@ -9,23 +9,26 @@ class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      plants: [],
       userPlants: [],
     };
   }
-
   componentDidMount() {
-    Axios.get("http://localhost:3000/api")
+    Axios({
+      method: "GET",
+      url: "http://localhost:3000/userPlants",
+      withCredentials: true,
+    })
       .then((response) => {
-        this.setState({ plants: response.plants });
+        console.log(response.data)
+        this.setState({ userPlants: response.data.userPlants });
       })
       .catch((err) => {
         console.log(err);
       });
   }
-
   render() {
     let user = getUser();
+    let userPlants = this.state.userPlants;
     return (
       <div>
         {!user ? (
@@ -38,8 +41,11 @@ class Profile extends Component {
             <p>This are the plant you are offering at the moment:</p>
   
             <ul>
-              <li>Plant 1</li>
-              <li>Plant 2</li>
+              {userPlants.map((plants, index) => {
+                return(
+                  <li key={index}>{plants.title}</li>
+                )
+              })}
             </ul>
           </div> 
           </div> 
