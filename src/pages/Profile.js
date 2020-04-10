@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getUser } from "../utils/auth";
 // import {searchPlants} from  '../utils/api'
 import Axios from "axios";
-import AddPlant from "module";
+// import AddPlant from "module";
 
 class Profile extends Component {
   constructor() {

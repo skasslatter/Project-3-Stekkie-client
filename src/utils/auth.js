@@ -3,7 +3,7 @@ import qs from "qs";
 
 const axios = Axios.create({
   baseURL: "http://localhost:3000",
-  // withCredentials: true,
+  withCredentials: true,
   //headers: {"content-type": "application/x-www-form-urlencoded"}
 });
 
