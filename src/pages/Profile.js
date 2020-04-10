@@ -3,6 +3,7 @@ import { getUser } from "../utils/auth";
 // import {searchPlants} from  '../utils/api'
 import Axios from "axios";
 // import AddPlant from "module";
+import {Redirect, withRouter} from "react-router-dom";
 
 class Profile extends Component {
   constructor() {
@@ -27,18 +28,25 @@ class Profile extends Component {
     let user = getUser();
     return (
       <div>
-        <h1>Welcome {user.username}</h1>
-        <div>
-          <p>This are the plant you are offering at the moment:</p>
-
-          <ul>
-            <li>Plant 1</li>
-            <li>Plant 2</li>
-          </ul>
-        </div>
+        {!user ? (
+          <Redirect to="/login"/>
+        )
+        : (
+          <div>
+          <h1>Welcome {user.username}</h1>
+          <div>
+            <p>This are the plant you are offering at the moment:</p>
+  
+            <ul>
+              <li>Plant 1</li>
+              <li>Plant 2</li>
+            </ul>
+          </div> 
+          </div> 
+        )}
       </div>
     );
   }
 }
 
-export default Profile;
+export default withRouter(Profile);

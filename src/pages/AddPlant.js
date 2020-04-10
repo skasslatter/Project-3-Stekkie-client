@@ -1,5 +1,7 @@
 import React from "react";
 import Axios from "axios";
+import {Redirect, withRouter} from "react-router-dom";
+import { getUser } from "../utils/auth";
 
 class AddPlant extends React.Component {
   constructor(props) {
@@ -57,8 +59,14 @@ handleSubmit(e) {
   // };
 
   render() {
+    let user = getUser();
     return (
       <div>
+        {!user ? (
+          <Redirect to="/login"/>
+        )
+        : (
+          <div>
         <form onSubmit={this.handleSubmit} ref={this.formRef}>
           <h1>Add a plant</h1>
           <div>
@@ -105,6 +113,8 @@ handleSubmit(e) {
           </div>
           <button type="submit">Add plant</button>
         </form>
+        </div>
+        )}
       </div>
     );
   }
