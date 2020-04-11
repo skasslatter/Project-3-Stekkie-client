@@ -1,6 +1,6 @@
 import React from "react";
 import Axios from "axios";
-import { Redirect, withRouter } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { getUser } from "../utils/auth";
 import Autosuggest from "react-autosuggest";
 import "../stylesheets/addPlant.css";
@@ -22,19 +22,20 @@ class AddPlant extends React.Component {
       },
     };
   }
-  componentDidMount() {
-    Axios({
-      method: "GET",
-      url: "http://localhost:3000/api",
-      withCredentials: true,
-    })
-      .then((response) => {
-        this.setState({ plants: response.plants });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+
+  // componentDidMount() {
+  //   Axios({
+  //     method: "GET",
+  //     url: "http://localhost:3000/api/search",
+  //     withCredentials: true,
+  //   })
+  //     .then((response) => {
+  //       this.setState({ plants: response.plants });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -56,27 +57,6 @@ class AddPlant extends React.Component {
       });
   }
 
-  // handleFormSubmit = (event) => {
-  //   event.preventDefault(); //to not reload the page
-  //   Axios.post("http://localhost:3000/userPlants/create")
-  //     .then(() => {
-  //       this.props.history.push("/profile")
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-  // handleNameInput = (event) => {
-  //   //call API
-  //   this.setState({
-  //     plant: {
-  //       ...this.state.plant,
-  //       name: event.target.value
-  //     }
-  //   });
-  // };
-
   onNameChange = (event, { newValue }) => {
     // debugger
     this.setState({
@@ -85,10 +65,16 @@ class AddPlant extends React.Component {
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
-    // debugger
-    this.setState({
-      // suggestions: getSuggestions(value),
-      suggestions: ["rose", "rosemary"],
+    Axios({
+      method: "GET",
+      url: "http://localhost:3000/api/search",
+      withCredentials: true,
+    })
+    .then((response) => {
+      console.log("XXX", response)
+      this.setState({
+        suggestions: response.data.plants
+      });
     });
   };
 
@@ -121,30 +107,18 @@ class AddPlant extends React.Component {
                   suggestions={this.state.suggestions}
                   onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                   onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                  getSuggestionValue={(suggestion) => suggestion}
-                  renderSuggestion={(suggestion) => suggestion}
+                  getSuggestionValue={(suggestion) => suggestion.common_name}
+                  renderSuggestion={(suggestion) => `${suggestion.common_name} (${suggestion.scientific_name})`}
                   inputProps={autosuggestProps}
                 />
               </div>
               <div className="form-group">
                 <label>Title:</label>
-                <input
-                  type="text"
-                  name="title"
-                  className="form-control"
-                  // value={this.state.plant.title}
-                  // onChange={(e) => this.handleN(e)}
-                />
+                <input type="text" name="title" className="form-control" />
               </div>
               <div className="form-group">
                 <label>Image Url:</label>
-                <input
-                  type="file"
-                  name="photo"
-                  className="form-control"
-                  // value={this.state.plant.image}
-                  // onChange={(e) => this.handleImageInput(e)}
-                />
+                <input type="file" name="photo" className="form-control" />
               </div>
               <div className="form-group">
                 <label>Description:</label>
@@ -152,18 +126,11 @@ class AddPlant extends React.Component {
                   type="text"
                   name="description"
                   className="form-control"
-                  // value={this.state.plant.description}
-                  // onChange={(e) => this.handleN(e)}
                 />
               </div>
               <div className="form-group">
                 <label>Payment type (please choose)</label>
-                <select
-                  name="paymentType"
-                  className="form-control"
-                  // value={this.state.plant.paymentType}
-                  // onChange={(e) => this.handleN(e)}
-                >
+                <select name="paymentType" className="form-control">
                   <option value="exchange">Exchange</option>
                   <option value="free">Free</option>
                 </select>
