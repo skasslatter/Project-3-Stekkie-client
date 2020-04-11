@@ -65,15 +65,23 @@ class AddPlant extends React.Component {
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
+    if (value.length <= 2){
+      this.setState({
+        suggestions: [],
+      });
+      return
+    }
     Axios({
       method: "GET",
-      url: "http://localhost:3000/api/search",
+      url: `http://localhost:3000/api/search?q=${value}`,
       withCredentials: true,
     })
     .then((response) => {
-      console.log("XXX", response)
+      const filteredSuggestions = response.data.plants.filter(plant =>
+        plant.common_name !== null
+        )
       this.setState({
-        suggestions: response.data.plants
+        suggestions: filteredSuggestions
       });
     });
   };
@@ -88,7 +96,7 @@ class AddPlant extends React.Component {
     let user = getUser();
     const autosuggestProps = {
       name: "name",
-      placeholder: "Type a plant name",
+      placeholder: "Type to search for a plant",
       value: this.state.name,
       onChange: this.onNameChange,
     };
@@ -135,7 +143,7 @@ class AddPlant extends React.Component {
                   <option value="free">Free</option>
                 </select>
               </div>
-              <button type="submit">Add plant</button>
+              <button type="submit" className="btn btn-success">Add plant</button>
             </form>
           </div>
         )}
