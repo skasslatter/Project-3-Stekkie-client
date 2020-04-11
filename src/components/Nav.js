@@ -31,6 +31,7 @@ class Nav extends React.Component {
                 <img
                   className="home-icon"
                   src="/pngkey.com-home-png-2373015 copy.png"
+                  alt="Home"
                 ></img>
               </Link>
             </div>
@@ -48,6 +49,7 @@ class Nav extends React.Component {
                 <img
                   className="home-icon"
                   src="/pngkey.com-home-png-2373015 copy.png"
+                  alt="Home"
                 ></img>
               </Link>
             </div>
