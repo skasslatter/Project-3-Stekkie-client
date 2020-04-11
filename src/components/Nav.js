@@ -27,7 +27,7 @@ class Nav extends React.Component {
               <Link to="/signup">Signup</Link>
             </div>
             <div>
-              <Link to="/login">
+              <Link to="/">
                 <img
                   className="home-icon"
                   src="/pngkey.com-home-png-2373015 copy.png"
