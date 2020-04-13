@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
-import Nav from "./components/Nav";
+import Navigation from "./components/Nav";
 import Footer from "./components/Footer";
 import Homepage from "./pages/Homepage";
 import Signup from "./pages/Signup";
@@ -9,15 +9,13 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Marketplace from "./pages/Marketplace";
 import AddPlant from "./pages/AddPlant";
+import DetailPage from "./pages/DetailPage";
 
 class App extends React.Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <div className="App">
-        <Nav />
+        <Navigation />
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route path="/signup" component={Signup} />
@@ -25,6 +23,7 @@ class App extends React.Component {
           <Route path="/profile" component={Profile} />
           <Route path="/add-plant" component={AddPlant} />
           <Route path="/marketplace" component={Marketplace} />
+          <Route path="/plants/:id" component={DetailPage} />
         </Switch>
         <Footer />
       </div>

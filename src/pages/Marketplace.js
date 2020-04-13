@@ -3,6 +3,8 @@ import { getUser } from "../utils/auth";
 import Axios from "axios";
 import { Redirect, withRouter } from "react-router-dom";
 import PlantCard from "../components/PlantCard";
+import { Link } from "react-router-dom";
+
 
 class Marketplace extends Component {
   constructor() {
@@ -40,10 +42,12 @@ class Marketplace extends Component {
             <div class="card-deck">
               {plants.map((plant, index) => {
                 return (
+                  <Link to={`/plants/${plant._id}`}  key={index}>
                   <PlantCard
                     key={index}
                     plant={plant}
                   />
+                  </Link>
                 );
               })}
             </div>
