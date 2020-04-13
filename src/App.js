@@ -9,11 +9,9 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Marketplace from "./pages/Marketplace";
 import AddPlant from "./pages/AddPlant";
+import DetailPage from "./pages/DetailPage";
 
 class App extends React.Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <div className="App">
@@ -25,6 +23,7 @@ class App extends React.Component {
           <Route path="/profile" component={Profile} />
           <Route path="/add-plant" component={AddPlant} />
           <Route path="/marketplace" component={Marketplace} />
+          <Route path="/plants/:id" component={DetailPage} />
         </Switch>
         <Footer />
       </div>

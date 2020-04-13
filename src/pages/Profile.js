@@ -12,6 +12,7 @@ class Profile extends Component {
       userPlants: [],
     };
   }
+
   componentDidMount() {
     Axios({
       method: "GET",
@@ -27,14 +28,6 @@ class Profile extends Component {
       });
   }
 
-  // deletePlant = (index) => {
-  //   let newList = [...this.state.userPlants];
-  //   newList.splice(index, 1);
-  //   this.setState({
-  //     userPlants: newList,
-  //   });
-  // };
-
   deletePlant = (id) => {
     Axios({
       method: "DELETE",
@@ -42,8 +35,7 @@ class Profile extends Component {
       withCredentials: true,
     })
       .then(() => {
-        let newList = this.state.userPlants.filter((plant) => 
-        id !== plant._id);
+        let newList = this.state.userPlants.filter((plant) => id !== plant._id);
         this.setState({
           userPlants: newList,
         });
@@ -66,9 +58,10 @@ class Profile extends Component {
             <div>
               <p>This are the plant you are offering at the moment:</p>
 
-              <div class="card-deck">
+              <div className="card-deck">
                 {userPlants.map((plant, index) => {
                   return (
+          
                     <PlantCard
                       key={index}
                       plant={plant}
@@ -79,7 +72,6 @@ class Profile extends Component {
                   );
                 })}
               </div>
-
               <div>
                 <Link to="/add-plant" className="caption btn btn-success">
                   Add another plant
