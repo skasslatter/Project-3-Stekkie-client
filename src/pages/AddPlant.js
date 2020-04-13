@@ -23,20 +23,6 @@ class AddPlant extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   Axios({
-  //     method: "GET",
-  //     url: "http://localhost:3000/api/search",
-  //     withCredentials: true,
-  //   })
-  //     .then((response) => {
-  //       this.setState({ plants: response.plants });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData(this.formRef.current);

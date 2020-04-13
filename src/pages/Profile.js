@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { getUser } from "../utils/auth";
-// import {searchPlants} from  '../utils/api'
 import Axios from "axios";
-// import AddPlant from "module";
 import { Redirect, withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import PlantCard from "../components/PlantCard";
 
 class Profile extends Component {
   constructor() {
@@ -27,6 +26,33 @@ class Profile extends Component {
         console.log(err);
       });
   }
+
+  // deletePlant = (index) => {
+  //   let newList = [...this.state.userPlants];
+  //   newList.splice(index, 1);
+  //   this.setState({
+  //     userPlants: newList,
+  //   });
+  // };
+
+  deletePlant = (id) => {
+    Axios({
+      method: "DELETE",
+      url: `http://localhost:3000/userPlants/${id}`,
+      withCredentials: true,
+    })
+      .then(() => {
+        let newList = this.state.userPlants.filter((plant) => 
+        id !== plant._id);
+        this.setState({
+          userPlants: newList,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   render() {
     let user = getUser();
     let userPlants = this.state.userPlants;
@@ -43,24 +69,13 @@ class Profile extends Component {
               <div class="card-deck">
                 {userPlants.map((plant, index) => {
                   return (
-                    <div class="card">
-                      <img
-                        class="card-img-top"
-                        src={plant.imgPath}
-                        alt="Card image cap"
-                      />
-                      <div class="card-body">
-                        <h4 key={index} class="card-title">
-                          {plant.title}
-                        </h4>
-                      </div>
-                      <div class="card-footer">
-                      <button className="btn btn-danger">Remove</button>
-                        {/* <small class="text-muted">
-                          Last updated 3 mins ago
-                        </small> */}
-                      </div>
-                    </div>
+                    <PlantCard
+                      key={index}
+                      plant={plant}
+                      onDelete={() => {
+                        this.deletePlant(plant._id);
+                      }}
+                    />
                   );
                 })}
               </div>
