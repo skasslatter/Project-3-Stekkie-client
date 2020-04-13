@@ -39,7 +39,7 @@ class Marketplace extends Component {
           <div>
             <p>This are the offered plants:</p>
 
-            <div class="card-deck">
+            <div className="card-deck">
               {plants.map((plant, index) => {
                 return (
                   <Link to={`/plants/${plant._id}`}  key={index}>

@@ -9,7 +9,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Marketplace from "./pages/Marketplace";
 import AddPlant from "./pages/AddPlant";
-import DetailPage from "./pages/DetailPage";
+import DetailPage from "./pages/Detailpage";
 
 class App extends React.Component {
   render() {
