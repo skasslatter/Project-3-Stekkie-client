@@ -5,6 +5,8 @@ import React from 'react';
 export default class Footer extends React.Component {
     render(){
         return (
+            <div>
+            <div className="empty"></div>
             <footer id="sticky-footer">
             <div className="bottom section-padding">
                 <div className="container">
@@ -18,6 +20,7 @@ export default class Footer extends React.Component {
                 </div>
             </div>
         </footer>
+        </div>
         )
     }
 }
