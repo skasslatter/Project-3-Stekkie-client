@@ -1,17 +1,21 @@
 .nav {
-  background-color: #428756;
+  background-color: #1c442e;
   color: white;
   justify-content: space-around;
   padding-top: 1vh;
   padding-bottom: 1vh;
-  height: 5vh;
+  height: 6vh;
 }
 
-.nav a{
+.nav a, .logout{
   color:white;
   text-decoration: none;
 }
 
 .home-icon {
   height: 2vh;
+}
+
+.navbar {
+  background-color: #1c442e!important;
 }

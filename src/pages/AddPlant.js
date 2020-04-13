@@ -12,6 +12,7 @@ class AddPlant extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       name: "",
+      plantApiId: "",
       suggestions: [],
       plant: {
         name: "",
@@ -22,20 +23,6 @@ class AddPlant extends React.Component {
       },
     };
   }
-
-  // componentDidMount() {
-  //   Axios({
-  //     method: "GET",
-  //     url: "http://localhost:3000/api/search",
-  //     withCredentials: true,
-  //   })
-  //     .then((response) => {
-  //       this.setState({ plants: response.plants });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -65,23 +52,24 @@ class AddPlant extends React.Component {
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
-    if (value.length <= 2){
+    if (value.length <= 2) {
       this.setState({
         suggestions: [],
+        plantApiId: ""
       });
-      return
+      return;
     }
     Axios({
       method: "GET",
       url: `http://localhost:3000/api/search?q=${value}`,
       withCredentials: true,
-    })
-    .then((response) => {
-      const filteredSuggestions = response.data.plants.filter(plant =>
-        plant.common_name !== null
-        )
+    }).then((response) => {
+      const filteredSuggestions = response.data.plants.filter(
+        (plant) => plant.common_name !== null
+      );
       this.setState({
-        suggestions: filteredSuggestions
+        suggestions: filteredSuggestions,
+        plantApiId: ""
       });
     });
   };
@@ -92,8 +80,17 @@ class AddPlant extends React.Component {
     });
   };
 
+  onSuggestionSelected = (
+    event,
+    { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
+    const selectedPlantId = suggestion.id;
+    this.setState({
+      plantApiId: selectedPlantId,
+    })
+  };
+
   render() {
-    let user = getUser();
+    const user = getUser();
     const autosuggestProps = {
       name: "name",
       placeholder: "Type to search for a plant",
@@ -116,9 +113,13 @@ class AddPlant extends React.Component {
                   onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                   onSuggestionsClearRequested={this.onSuggestionsClearRequested}
                   getSuggestionValue={(suggestion) => suggestion.common_name}
-                  renderSuggestion={(suggestion) => `${suggestion.common_name} (${suggestion.scientific_name})`}
+                  renderSuggestion={(suggestion) =>
+                    `${suggestion.common_name} (${suggestion.scientific_name})`
+                  }
                   inputProps={autosuggestProps}
+                  onSuggestionSelected={this.onSuggestionSelected}
                 />
+                <input type="hidden" name="plantApiId" value={this.state.plantApiId}/>
               </div>
               <div className="form-group">
                 <label>Title:</label>
@@ -143,7 +144,9 @@ class AddPlant extends React.Component {
                   <option value="free">Free</option>
                 </select>
               </div>
-              <button type="submit" className="btn btn-success">Add plant</button>
+              <button type="submit" className="btn btn-success">
+                Add plant
+              </button>
             </form>
           </div>
         )}

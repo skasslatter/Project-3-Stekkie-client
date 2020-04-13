@@ -3,8 +3,8 @@
 }
 
 .bottom {
-  background-color: #428756;
-  height: 10vh;
+  background-color: #1c442e;
+  height: 9vh;
 }
 
 .copyright {
@@ -23,4 +23,15 @@
 footer {
   margin-top: auto !important;
   padding: 0 !important;
+  position: fixed;
+   bottom: 0px!important;
+   width: 100%;
+}
+
+.empty {
+  padding-top: 9vh
+}
+
+.btn-success {
+  background-color: #1c442e!important
 }
