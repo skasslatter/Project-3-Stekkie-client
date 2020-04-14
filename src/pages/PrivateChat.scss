@@ -1,0 +1,33 @@
+.private-chat {
+    display: flex;
+    justify-content: center;
+    .sidebar {
+        width: 30vw;
+        height: 100vh;
+        background-color: #ff00ff;
+        color: black;
+    }
+    .chat {
+        width: 70vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .messages {
+        height: 80vh;
+    }
+    .message {
+        height: 20vh;
+        width: 70vw;
+        button {
+            background-color: #ff00ff;
+            color: black;
+            width: 30vw;
+            height: 60px;
+        }
+        input {
+            width: 40vw;
+            height: 60px;
+        }
+    }
+}
