@@ -45,7 +45,7 @@ class Navigation extends React.Component {
           </Nav>
           <Nav>
           {/* <div><p>Welcome {user.username}</p></div> */}
-          <div> <p onClick={this.logoutUser} className="logout">Logout</p></div>
+          <Nav.Link href="/" onClick={this.logoutUser} className="logout">Logout</Nav.Link>
          
           </Nav>
         </Navbar.Collapse>

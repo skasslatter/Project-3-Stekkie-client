@@ -61,7 +61,6 @@ class Profile extends Component {
               <div className="card-deck">
                 {userPlants.map((plant, index) => {
                   return (
-          
                     <PlantCard
                       key={index}
                       plant={plant}

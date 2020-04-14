@@ -4,6 +4,7 @@ import Axios from "axios";
 import { Redirect, withRouter } from "react-router-dom";
 import PlantCard from "../components/PlantCard";
 import { Link } from "react-router-dom";
+import "../stylesheets/marketplace.css";
 
 
 class Marketplace extends Component {
@@ -33,16 +34,18 @@ class Marketplace extends Component {
     let plants = this.state.plants;
     return (
       <div>
+      
         {!user ? (
+          <div>
           <Redirect to="/login" />
+          </div>
         ) : (
           <div>
             <p>This are the offered plants:</p>
-
             <div className="card-deck">
               {plants.map((plant, index) => {
                 return (
-                  <Link to={`/plants/${plant._id}`}  key={index}>
+                  <Link to={`/plants/${plant._id}`}  className="card-link" key={index}>
                   <PlantCard
                     key={index}
                     plant={plant}
