@@ -5,9 +5,9 @@ export default class PlantCard extends React.Component {
   render() {
     return (
       <div className="card">
-      <Link to={`/plants/${this.props.plant._id}`}>
+      <Link to={`/plants/${this.props.plant._id}`} className="card-link">
         <img
-          className="card-img-top"
+          className="card-img-top list-img"
           src={this.props.plant.imgPath}
           alt="Card image cap"
         />

@@ -3,7 +3,7 @@ import React from "react";
 export default class DetailView extends React.Component {
   render() {
     return (
-      <div className="card">
+      <div className="card detailview">
         <img
           className="card-img-top"
           src={this.props.plant.imgPath}
