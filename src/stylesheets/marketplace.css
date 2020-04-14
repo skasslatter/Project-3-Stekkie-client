@@ -1,6 +1,7 @@
 .list-img {
-  max-width: 25vw;
   align-self: center;
+  /* height: 30vh;
+  width: 30vw; */
 }
 
 /* .card-deck {
@@ -8,9 +9,10 @@
 } */
 
 .card-link {
-  margin-top: 3vh
+  margin-top: 3vh;
 }
 
 .detailview {
-  padding: 3vh
+  padding: 3vh;
+  border: 0px!important;
 }

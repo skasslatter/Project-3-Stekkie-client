@@ -1,7 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { getUser, logout } from "../utils/auth";
 
 export default class DetailView extends React.Component {
+  
   render() {
+    let user = getUser();
+
     return (
       <div className="card detailview">
         <img
@@ -11,10 +16,13 @@ export default class DetailView extends React.Component {
         />
         <div className="card-body">
           <h3 className="card-title">{this.props.plant.title}</h3>
-          <h6 className="card-title">({this.props.plant.name})</h6>
+          <h6 className="card-title">
+            Scientific name: {this.props.plant.name}
+          </h6>
           <div>{this.props.plant.description}</div>
           <div>Free or for exchange: {this.props.plant.paymentType}</div>
         </div>
+
 
         {!this.props.onDelete ? (
           <div />
@@ -23,9 +31,6 @@ export default class DetailView extends React.Component {
             <button onClick={this.props.onDelete} className="btn btn-danger">
               Remove
             </button>
-            {/* <small className="text-muted">
-                          Last updated 3 mins ago
-                        </small> */}
           </div>
         )}
       </div>

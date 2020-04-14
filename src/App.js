@@ -26,7 +26,6 @@ class App extends React.Component {
           <Route path="/marketplace" component={Marketplace} />
           <Route path="/plants/:id" component={DetailPage} />
           <Route path="/chat/private" component={PrivateChat} />
-
         </Switch>
         <Footer />
       </div>

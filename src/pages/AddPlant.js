@@ -93,7 +93,7 @@ class AddPlant extends React.Component {
     const user = getUser();
     const autosuggestProps = {
       name: "name",
-      placeholder: "Type to search for a plant",
+      placeholder: "Type to search for the sceintific name of your plant",
       value: this.state.name,
       onChange: this.onNameChange,
     };
@@ -122,7 +122,7 @@ class AddPlant extends React.Component {
                 <input type="hidden" name="plantApiId" value={this.state.plantApiId}/>
               </div>
               <div className="form-group">
-                <label>Title:</label>
+                <label>Yout title:</label>
                 <input type="text" name="title" className="form-control" />
               </div>
               <div className="form-group">
@@ -130,7 +130,7 @@ class AddPlant extends React.Component {
                 <input type="file" name="photo" className="form-control" />
               </div>
               <div className="form-group">
-                <label>Description:</label>
+                <label>Short description:</label>
                 <input
                   type="text"
                   name="description"

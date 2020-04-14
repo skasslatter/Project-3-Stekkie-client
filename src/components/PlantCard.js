@@ -13,11 +13,21 @@ export default class PlantCard extends React.Component {
         />
         <div className="card-body">
           <h4 className="card-title">{this.props.plant.title}</h4>
+          <p>Click for more information</p>
         </div>
         </Link>
 
         {!this.props.onDelete ? (
-          <div />
+          <div>
+            <div>
+              <p>You want this plant? </p>
+              <Link to="/chat/private">
+                <button className="btn btn-warning">
+                  Click here to contact the plant owner
+                </button>
+              </Link>
+            </div>
+          </div>
         ) : (
           <div className="card-footer">
             <button onClick={this.props.onDelete} className="btn btn-danger">
