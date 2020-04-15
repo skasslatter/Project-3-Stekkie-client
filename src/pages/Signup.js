@@ -3,12 +3,18 @@ import { signup } from "../utils/auth";
 import "../stylesheets/signup.css";
 import { validate } from "isemail";
 import zxcvbn from "zxcvbn";
+import GooglePlacesAutocomplete from "react-google-places-autocomplete";
+// import 'react-google-places-autocomplete/dist/index.min.css';
+import { geocodeByAddress, getLatLng } from "react-google-places-autocomplete";
 
 export default class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.handleInput = this.handleInput.bind(this);
     this.handleSignup = this.handleSignup.bind(this);
+    this.handleAddressInput = this.handleAddressInput.bind(this);
+    this.turnIntoCoordinates = this.turnIntoCoordinates.bind(this);
+
     const { minStrength = 2, thresholdLength = 8 } = props;
 
     // minStrength is the minimum strength of password. The number is between 0 and 4
@@ -27,25 +33,51 @@ export default class Signup extends React.Component {
       name: "",
       email: "",
       password: "",
-      city: "",
-      country: "",
+      address: "",
+      lat: "",
+      lng: ""
     },
     error: "",
     strength: 0,
   };
 
   handleInput(event) {
-    // debugger
     let userCopy = { ...this.state.user };
     userCopy[event.target.name] = event.target.value;
     this.setState({
       user: userCopy,
     });
   }
-  validatePasswordStrong(value) {
-    debugger;
-    console.log(zxcvbn(value).score);
 
+  handleAddressInput(value) {
+    let userCopy = { ...this.state.user };
+    userCopy.address = value.description;
+    console.log("This is the address:", value.description)
+    this.turnIntoCoordinates(value.description);
+    this.setState({
+      user: userCopy,
+    });
+  }
+
+  turnIntoCoordinates(value) {
+    geocodeByAddress(value)
+      .then((results) => getLatLng(results[0]))
+      .then(({ lat, lng }) => {
+        let userCopy = { ...this.state.user };
+        userCopy.lat = lat
+        userCopy.lng = lng
+        this.setState({
+          user: userCopy,
+        })
+        console.log("Successfully got latitude and longitude", { lat, lng })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  validatePasswordStrong(value) {
+    console.log(zxcvbn(value).score);
     // ensure password is long enough
     if (value.length <= this.thresholdLength) {
       this.setState({
@@ -67,8 +99,8 @@ export default class Signup extends React.Component {
       return true;
     }
   }
+
   handleSignup() {
-    debugger;
     if (!validate(this.state.user.email)) {
       console.log("Email is invalid");
       this.setState({
@@ -79,6 +111,7 @@ export default class Signup extends React.Component {
     ) {
       console.log("Invalid password");
     } else {
+      console.log("THis is the new user: ", this.state.user)
       signup(this.state.user)
         .then(() => {
           this.props.history.push("/login");
@@ -89,6 +122,7 @@ export default class Signup extends React.Component {
         });
     }
   }
+
   render() {
     return (
       <div className="container-fluid">
@@ -142,7 +176,7 @@ export default class Signup extends React.Component {
                         />
                       </div>
                     </div>
-                    <div className="form-group">
+                    {/* <div className="form-group">
                       <label>City</label>
                       <div>
                         <input
@@ -155,8 +189,28 @@ export default class Signup extends React.Component {
                           required
                         />
                       </div>
-                    </div>
+                    </div> */}
                     <div className="form-group">
+                      <label>Home Address</label>
+                      <div>
+                        <GooglePlacesAutocomplete
+                          className="form-control"
+                          // onSelect={console.log}
+                          onSelect={this.handleAddressInput}
+                        />
+
+                        {/* <input
+                          onChange={this.handleInput}
+                          value={this.state.city}
+                          name="city"
+                          type="text"
+                          placeholder="city"
+                          className="form-control"
+                          required
+                        /> */}
+                      </div>
+                    </div>
+                    {/* <div className="form-group">
                       <label>Country</label>
                       <div>
                         <input
@@ -169,7 +223,7 @@ export default class Signup extends React.Component {
                           required
                         />
                       </div>
-                    </div>
+                    </div> */}
                     <div className="form-group">
                       <label>Password</label>
                       <div>

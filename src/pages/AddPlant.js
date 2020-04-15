@@ -93,7 +93,7 @@ class AddPlant extends React.Component {
     const user = getUser();
     const autosuggestProps = {
       name: "name",
-      placeholder: "Type to search for the sceintific name of your plant",
+      placeholder: "Type to search for the scientific name of your plant",
       value: this.state.name,
       onChange: this.onNameChange,
     };
@@ -103,8 +103,9 @@ class AddPlant extends React.Component {
         {!user ? (
           <Redirect to="/login" />
         ) : (
-          <div>
-            <form onSubmit={this.handleSubmit} ref={this.formRef}>
+          <div className="container">
+          <div className="row form-row">
+            <div onSubmit={this.handleSubmit} ref={this.formRef}>
               <h1>Add a plant</h1>
               <div className="form-group">
                 <label>Name:</label>
@@ -124,7 +125,7 @@ class AddPlant extends React.Component {
               <div className="form-group">
                 <label>Your title:</label>
                 <input type="text" name="title" className="form-control" />
-              </div>
+              </div> */}
               <div className="form-group">
                 <label>Image Url:</label>
                 <input type="file" name="photo" className="form-control" />
@@ -147,8 +148,10 @@ class AddPlant extends React.Component {
               <button type="submit" className="btn btn-success">
                 Add plant
               </button>
-            </form>
+            </div>
           </div>
+          </div>
+
         )}
       </div>
     );
