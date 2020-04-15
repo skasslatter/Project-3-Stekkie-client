@@ -23,7 +23,9 @@ class Navigation extends React.Component {
       <div className="navbar">
       {!user ? (
       <Navbar collapseOnSelect expand="lg"  variant="dark">
-        <Navbar.Brand href="/">You grow girl</Navbar.Brand>
+        <Navbar.Brand href="/">
+        <img src="/Stekkie_logo-diagonal.png" className="logo-navbar"/>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -35,11 +37,11 @@ class Navigation extends React.Component {
       
       ) : (
         <Navbar collapseOnSelect expand="lg"  variant="dark">
-        <Navbar.Brand href="/profile">You grow girl</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Brand href="/profile">
+        <img src="/Stekkie_logo-diagonal.png" className="logo-navbar"/>
+        </Navbar.Brand>        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-          
             <Nav.Link href="/profile">Profile</Nav.Link>
             <Nav.Link href="/marketplace">Marketplace</Nav.Link>
           </Nav>

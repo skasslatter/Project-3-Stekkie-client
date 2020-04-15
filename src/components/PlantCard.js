@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class PlantCard extends React.Component {
   render() {
     return (
-      <div className="card">
+      <div className="card col-md-4">
       <Link to={`/plants/${this.props.plant._id}`} className="card-link">
         <img
           className="card-img-top list-img"
@@ -40,3 +40,5 @@ export default class PlantCard extends React.Component {
     );
   }
 }
+
+
