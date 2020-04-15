@@ -1,12 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { getUser, logout } from "../utils/auth";
 
 export default class DetailView extends React.Component {
   
   render() {
-    let user = getUser();
-
     return (
       <div className="card detailview">
         <img

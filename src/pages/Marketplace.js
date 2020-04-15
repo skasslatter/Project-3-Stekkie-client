@@ -3,7 +3,6 @@ import { getUser } from "../utils/auth";
 import Axios from "axios";
 import { Redirect, withRouter } from "react-router-dom";
 import PlantCard from "../components/PlantCard";
-import { Link } from "react-router-dom";
 import SearchPlant from "../components/SearchPlant";
 
 import "../stylesheets/marketplace.css";

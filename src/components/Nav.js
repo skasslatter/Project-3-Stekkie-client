@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { getUser, logout } from "../utils/auth";
 import { withRouter } from "react-router-dom";
-import { Navbar, NavDropdown, Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import "../stylesheets/nav.css";
 
 class Navigation extends React.Component {
