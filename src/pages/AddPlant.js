@@ -105,7 +105,7 @@ class AddPlant extends React.Component {
         ) : (
           <div className="container">
           <div className="row form-row">
-            <div onSubmit={this.handleSubmit} ref={this.formRef}>
+            <form onSubmit={this.handleSubmit} ref={this.formRef}>
               <h1>Add a plant</h1>
               <div className="form-group">
                 <label>Name:</label>
@@ -148,7 +148,7 @@ class AddPlant extends React.Component {
               <button type="submit" className="btn btn-success">
                 Add plant
               </button>
-            </div>
+            </form>
           </div>
           </div>
 
