@@ -66,23 +66,17 @@ class Marketplace extends Component {
             <Redirect to="/login" />
           </div>
         ) : (
-          <div>
-            <p>This are the offered plants:</p>
-            <div className="card-deck">
-              {plants.map((plant, index) => {
-                return (
-                  <Link
-                    to={`/plants/${plant._id}`}
-                    className="card-link"
-                    key={index}
-                  >
+            <div>
+              <p>This are the offered plants:</p>
+              <div className="card-deck">
+                {plants.map((plant, index) => {
+                  return (
                     <PlantCard key={index} plant={plant} />
-                  </Link>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
     );
   }
