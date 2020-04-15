@@ -122,8 +122,8 @@ class AddPlant extends React.Component {
                 />
                 <input type="hidden" name="plantApiId" value={this.state.plantApiId}/>
               </div>
-              {/* <div className="form-group">
-                <label>Yout title:</label>
+              <div className="form-group">
+                <label>Your title:</label>
                 <input type="text" name="title" className="form-control" />
               </div> */}
               <div className="form-group">
