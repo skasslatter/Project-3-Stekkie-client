@@ -11,7 +11,7 @@ export default class PrivateChat extends PureComponent {
             messages: [],
             message: null,
             recipient: "",
-            recipients: ["Yvana", "Sybille"]
+            recipients: ["Yvana", "Sybille", "YvTest"]
         }
         this.sendMessage = this.sendMessage.bind(this);
         this.onMessageChange = this.onMessageChange.bind(this);
