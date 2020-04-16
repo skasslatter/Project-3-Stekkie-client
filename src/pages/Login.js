@@ -35,7 +35,7 @@ class Login extends Component {
         })
       })
       .catch((error) => {
-        this.setState({ error: error.response && error.response.data })
+        this.setState({ error: "Invalid credentials. Try it again."})
       })
   }
 
@@ -75,6 +75,11 @@ class Login extends Component {
                     <button className="btn-success btn" onClick={this.handleLoginClick}>
                       Login
                     </button>
+                    {this.state.error && (
+                      <div className="errors">
+                        <h3>{this.state.error}</h3>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
