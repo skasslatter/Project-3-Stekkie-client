@@ -91,7 +91,7 @@ class Marketplace extends Component {
 
     let searchComponent = <div></div>;
     if (this.state.searchType === "all") {
-      searchComponent = <div></div>
+      searchComponent = <div></div>;
     } else if (this.state.searchType === "distance") {
       searchComponent = (
         <SearchPlantByDistance handleSearch={this.handleSearchByDistance} />
@@ -112,9 +112,14 @@ class Marketplace extends Component {
           </div>
         ) : (
           <div>
-            <h1>
-              Welcome to the <span>🌼🌼</span> Garden <span>🌼🌼</span>
+            <div class="hero-image">
+              <div class="hero-text">
+              <h1>
+              Welcome to the <span>🌼</span> Garden <span>🌼</span>
             </h1>
+              </div>
+            </div>
+            
             <h4>I want to:</h4>
 
             <select
@@ -131,7 +136,7 @@ class Marketplace extends Component {
             {searchComponent}
             <div className="card-deck">
               {this.state.plants.map((plant, index) => {
-                return <PlantCard key={index} plant={plant}/>;
+                return <PlantCard key={index} plant={plant} />;
               })}
             </div>
           </div>
