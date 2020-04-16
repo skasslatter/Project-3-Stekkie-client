@@ -3,7 +3,7 @@
 }
 
 .bottom {
-  background-color: #1c442e;
+  background-color: rgb(155 196 203);
   height: 9vh;
 }
 
@@ -16,8 +16,9 @@
 .bottom p {
   margin-bottom: 0;
   line-height: 50px;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 1.5em;
+  font-weight: 200;
+  color: white;
 }
 
 footer {
@@ -33,5 +34,6 @@ footer {
 }
 
 .btn-success {
-  background-color: #1c442e!important
+  background-color: rgb(155 196 203)!important;
+  border-color: rgb(155 196 203)!important;
 }
