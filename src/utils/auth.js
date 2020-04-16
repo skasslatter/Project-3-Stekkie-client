@@ -2,7 +2,7 @@ import Axios from "axios";
 import qs from "qs";
 
 const axios = Axios.create({
-  baseURL: `${process.env.REACT_APP_API_BASE}/`,
+  // baseURL: `${process.env.REACT_APP_API_BASE}/`,
   withCredentials: true,
   //headers: {"content-type": "application/x-www-form-urlencoded"}
 });
@@ -10,7 +10,7 @@ const axios = Axios.create({
 export const login = (user) => {
   return axios({
     method: "POST",
-    url: "login",
+    url: `${process.env.REACT_APP_API_BASE}/login`,
     headers: { "content-type": "application/x-www-form-urlencoded" },
     data: qs.stringify(user),
   }).then((response) => {
@@ -21,7 +21,7 @@ export const login = (user) => {
 export const signup = (user) => {
   return axios({
     method: "POST",
-    url: "signup",
+    url: `${process.env.REACT_APP_API_BASE}/signup`,
     headers: { "content-type": "application/x-www-form-urlencoded" },
     data: qs.stringify(user),
   }).then((response) => {
@@ -32,7 +32,7 @@ export const signup = (user) => {
 export const logout = () => {
   return axios({
     method: "GET",
-    url: "logout",
+    url: `${process.env.REACT_APP_API_BASE}/logout`,
   }).then(() => {
     removeUser();
   });
