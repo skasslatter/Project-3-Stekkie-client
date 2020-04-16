@@ -3,6 +3,15 @@ import { Link } from "react-router-dom";
 
 export default class PlantCard extends React.Component {
   render() {
+    let distanceComponent = <div></div>;
+    if (!this.props.plant.distance) {
+      distanceComponent = (<div/>)
+    }
+    else {
+      let distance = (this.props.plant.distance /1000).toFixed(2)
+      distanceComponent = (<h5>{`${distance} km away`}</h5>)
+    }
+
     return (
       <div className="card">
       <Link to={`/plants/${this.props.plant._id}`} className="card-link">
@@ -13,6 +22,10 @@ export default class PlantCard extends React.Component {
         />
         <div className="card-body">
           <h4 className="card-title">{this.props.plant.title}</h4>
+          {distanceComponent}
+
+
+
           <p>Click for more information</p>
         </div>
         </Link>

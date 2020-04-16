@@ -21,8 +21,9 @@ class SearchPlantByName extends Component {
           className="form-control"
           onChange={(event) => this.handleOnChange(event)}
         >
-        
-          <option value="" selected diabled hidden>Please select</option>
+          <option value="" selected disabled hidden>
+            Please select
+          </option>
           <option value="2000">less than 2 km away</option>
           <option value="5000">less than 5 km away</option>
           <option value="10000">less than 10 km away</option>
