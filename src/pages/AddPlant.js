@@ -125,7 +125,7 @@ class AddPlant extends React.Component {
               <div className="form-group">
                 <label>Your title:</label>
                 <input type="text" name="title" className="form-control" />
-              </div> */}
+              </div>
               <div className="form-group">
                 <label>Image Url:</label>
                 <input type="file" name="photo" className="form-control" />
