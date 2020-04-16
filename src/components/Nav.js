@@ -28,8 +28,8 @@ class Navigation extends React.Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/signup">Signup</Nav.Link>
-            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link className="nav-link" href="/signup">Signup</Nav.Link>
+            <Nav.Link className="nav-link" href="/login">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -41,13 +41,9 @@ class Navigation extends React.Component {
         </Navbar.Brand>        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/profile">Profile</Nav.Link>
-            <Nav.Link href="/marketplace">Marketplace</Nav.Link>
-          </Nav>
-          <Nav>
-          {/* <div><p>Welcome {user.username}</p></div> */}
-          <Nav.Link href="/" onClick={this.logoutUser} className="logout">Logout</Nav.Link>
-         
+            <Nav.Link className="nav-link" href="/profile">Profile</Nav.Link>
+            <Nav.Link className="nav-link" href="/marketplace">Marketplace</Nav.Link>
+            <Nav.Link className="nav-link" href="/" onClick={this.logoutUser} className="logout">Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

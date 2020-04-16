@@ -1,14 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Aleo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 .bgimage {
   width:100%;
-  height:500px;
+  height:65vh;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/daniel-oberg-sEApBUS4fIk-unsplash.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size:cover;
   background-attachment: fixed;
-  height: 85vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,19 +18,25 @@
 .auth-buttons{
   margin-top: 4vh;
   justify-content: space-evenly;
+  font-family: 'Manrope', sans-serif;
 }
 
 .hero-text {
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-family: 'Aleo', serif;
+  font-family: 'Indie Flower', cursive;
 }
 
 .hero-text p {
-  font-family: 'Aleo', serif;
-  font-style: italic;
+  font-family: 'Indie Flower', cursive;
+  font-size: 5em;
+}
+
+.features {
+  height: 40vh;
+  background-color: rgba(207, 235, 223, 0.5);
 }

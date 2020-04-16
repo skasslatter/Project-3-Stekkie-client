@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 export default class Homepage extends React.Component {
   render() {
     return (
-      <section className="bgimage">
+      <div>
+          <section className="bgimage">
         <div className="hero-text">
           <div>
             {/* <h1 className="caption ">Welcome to You grow girl!</h1> */}
-            <img src="Una_Bella_Terma__1_-removebg-preview.png"></img>
-            <p>THE PLANT SWAPPING APP</p>
+            {/* <img src="Una_Bella_Terma__1_-removebg-preview.png"></img> */}
+            <p>The plant swapping app</p>
           </div>
           <div className="row auth-buttons">
             <Link to="/signup" className="caption btn btn-success">
@@ -23,6 +24,11 @@ export default class Homepage extends React.Component {
           </div>
         </div>
       </section>
+      <section className="features">
+
+      </section>
+      </div>
+    
     );
   }
 }
