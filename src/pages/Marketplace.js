@@ -35,7 +35,7 @@ class Marketplace extends Component {
   getAllPlants() {
     Axios({
       method: "GET",
-      url: "http://localhost:3000/marketplace",
+      url: `${process.env.REACT_APP_API_BASE}/marketplace`,
       withCredentials: true,
     })
       .then((response) => {
@@ -54,7 +54,7 @@ class Marketplace extends Component {
     } else {
       Axios({
         method: "GET",
-        url: `http://localhost:3000/marketplace/search?q=${searchValue}`,
+        url: `${process.env.REACT_APP_API_BASE}/marketplace/search?q=${searchValue}`,
         withCredentials: true,
       })
         .then((response) => {
@@ -74,7 +74,7 @@ class Marketplace extends Component {
     }
     Axios({
       method: "GET",
-      url: `http://localhost:3000/marketplace/searchGeo?distance=${distance}`,
+      url: `${process.env.REACT_APP_API_BASE}/marketplace/searchGeo?distance=${distance}`,
       withCredentials: true,
     })
       .then((response) => {

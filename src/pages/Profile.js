@@ -16,7 +16,7 @@ class Profile extends Component {
   componentDidMount() {
     Axios({
       method: "GET",
-      url: "http://localhost:3000/userPlants",
+      url: `${process.env.REACT_APP_API_BASE}/userPlants`,
       withCredentials: true,
     })
       .then((response) => {
@@ -31,7 +31,7 @@ class Profile extends Component {
   deletePlant = (id) => {
     Axios({
       method: "DELETE",
-      url: `http://localhost:3000/userPlants/${id}`,
+      url: `${process.env.REACT_APP_API_BASE}/userPlants/${id}`,
       withCredentials: true,
     })
       .then(() => {

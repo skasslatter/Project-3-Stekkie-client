@@ -15,7 +15,7 @@ export default class DetailPage extends React.Component {
     const selectedPlant = this.props.match.params.id;
     Axios({
       method: "GET",
-      url: `http://localhost:3000/plants/${selectedPlant}`,
+      url: `${process.env.REACT_APP_API_BASE}/plants/${selectedPlant}`,
       withCredentials: true,
     })
       .then((response) => {

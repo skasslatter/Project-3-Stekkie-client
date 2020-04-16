@@ -29,7 +29,7 @@ class AddPlant extends React.Component {
     let formData = new FormData(this.formRef.current);
     Axios({
       method: "POST",
-      url: "http://localhost:3000/userPlants/create",
+      url: `${process.env.REACT_APP_API_BASE}/userPlants/create`,
       withCredentials: true,
       data: formData,
       headers: {
@@ -61,7 +61,7 @@ class AddPlant extends React.Component {
     }
     Axios({
       method: "GET",
-      url: `http://localhost:3000/api/search?q=${value}`,
+      url: `${process.env.REACT_APP_API_BASE}/api/search?q=${value}`,
       withCredentials: true,
     }).then((response) => {
       const filteredSuggestions = response.data.plants.filter(

@@ -27,7 +27,7 @@ class SendEmail extends Component {
         console.log(recipient) 
         Axios({
             method: "POST",
-            url: `http://localhost:3000/email/${recipient}`,
+            url: `${process.env.REACT_APP_API_BASE}/email/${recipient}`,
             withCredentials: true,
             data: qs.stringify(this.state.data),
             headers: {
