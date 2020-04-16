@@ -21,7 +21,7 @@ export default class PlantCard extends React.Component {
           alt="Card image cap"
         />
         <div className="card-body">
-          <h4 className="card-title">{this.props.plant.title}</h4>
+          <h3 className="card-title">{this.props.plant.title}</h3>
           {distanceComponent}
 
 

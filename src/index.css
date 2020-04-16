@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  font-family: 'Indie Flower', cursive;
+  color: #9BC4CB
+}
+h3 {
+  color: #9BC4CB
+}
+
+h4 {
+  color: rgb(219 153 90)!important
+}
+
+.btn-warning {
+  background-color: rgb(219 153 90)!important;
+  color: white!important;
+}
