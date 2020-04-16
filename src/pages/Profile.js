@@ -54,9 +54,14 @@ class Profile extends Component {
           <Redirect to="/login" />
         ) : (
           <div>
-            <h1>Welcome {user.username}</h1>
+            <div class="hero-image-profile">
+              <div class="hero-text">
+                  <h1>Welcome {user.username}!</h1>{" "}
+              </div>
+            </div>
+
             <div>
-              <p>This are the plant you are offering at the moment:</p>
+              <h4>These are your plants:</h4>
 
               <div className="card-deck">
                 {userPlants.map((plant, index) => {

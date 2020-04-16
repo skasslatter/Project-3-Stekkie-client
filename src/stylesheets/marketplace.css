@@ -27,9 +27,31 @@
   width: 30vw!important;
 }
 
+.card-img-top {
+  align-self: center;
+}
+
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/annie-spratt-ncQ2sguVlgo-unsplash.jpg);
+
+  /* Set a specific height */
+  height: 50vh;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.card {
+  margin: 4vh!important;
+}
+
+.hero-image-profile {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/annie-spratt-8mqOw4DBBSg-unsplash.jpg);
 
   /* Set a specific height */
   height: 50vh;
