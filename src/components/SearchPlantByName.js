@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-class SearchPlant extends Component {
+class SearchPlantByName extends Component {
   state = {
-    searchValue: ""
+    searchValue: "",
   };
 
   handleOnChange = (event) => {
     this.setState({
-      searchValue: event.target.value
+      searchValue: event.target.value,
     });
-    this.props.handleSearch(event.target.value)
+    this.props.handleSearch(event.target.value);
   };
 
   render() {
@@ -20,14 +20,11 @@ class SearchPlant extends Component {
           placeholder="Search for a plant..."
           type="text"
           name="text"
-          onChange={event => this.handleOnChange(event)}
+          onChange={(event) => this.handleOnChange(event)}
         />
       </div>
     );
   }
 }
 
-export default SearchPlant
-
-
-
+export default SearchPlantByName;
