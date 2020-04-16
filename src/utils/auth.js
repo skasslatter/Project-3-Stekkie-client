@@ -2,7 +2,7 @@ import Axios from "axios";
 import qs from "qs";
 
 const axios = Axios.create({
-  baseURL: `${process.env.REACT_APP_API_BASE}`,
+  baseURL: `${process.env.REACT_APP_API_BASE}/`,
   withCredentials: true,
   //headers: {"content-type": "application/x-www-form-urlencoded"}
 });
