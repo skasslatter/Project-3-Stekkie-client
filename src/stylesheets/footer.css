@@ -36,4 +36,5 @@ footer {
 .btn-success {
   background-color: rgb(155 196 203)!important;
   border-color: rgb(155 196 203)!important;
+  margin-bottom: 2vh!important;
 }

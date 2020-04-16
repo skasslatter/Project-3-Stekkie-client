@@ -14,17 +14,21 @@ code {
 
 h1 {
   font-family: 'Indie Flower', cursive;
-  color: #9BC4CB
+  font-size: 4rem!important;
+  color: #9BC4CB;
+  margin-top: 3vh!important;
 }
 h3 {
   color: #9BC4CB
 }
 
-h4 {
-  color: rgb(219 153 90)!important
+h4, h6 {
+  color: rgb(219 153 90)!important;
+  margin-top: 3vh!important;
 }
 
-.btn-warning {
+.btn-warning, .btn-danger {
   background-color: rgb(219 153 90)!important;
   color: white!important;
+  border-color: #e58e3d!important;
 }

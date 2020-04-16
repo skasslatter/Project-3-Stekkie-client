@@ -115,7 +115,7 @@ class Marketplace extends Component {
             <div class="hero-image">
               <div class="hero-text">
               <h1>
-              Welcome to the <span>🌼</span> Garden <span>🌼</span>
+              Welcome to the Garden <span>🌼</span>
             </h1>
               </div>
             </div>
