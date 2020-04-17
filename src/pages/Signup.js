@@ -111,7 +111,7 @@ export default class Signup extends React.Component {
     ) {
       console.log("Invalid password");
     } else {
-      console.log("THis is the new user: ", this.state.user)
+      // console.log("THis is the new user: ", this.state.user)
       signup(this.state.user)
         .then(() => {
           this.props.history.push("/login");
