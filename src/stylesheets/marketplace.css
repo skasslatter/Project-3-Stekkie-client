@@ -78,7 +78,7 @@
 }
 
 .distance-search {
-  display: inline;
+  /* display: inline; */
   margin-top: 2vh;
   height: 40px!important;
   inline-size: fit-content!important;

@@ -1,9 +1,11 @@
 import React from "react";
-import {getUser} from "../utils/auth"
+import { getUser } from "../utils/auth";
+import { Link } from "react-router-dom";
+
 
 export default class DetailView extends React.Component {
   render() {
-    const user = getUser()
+    const user = getUser();
     return (
       <div className="card detailview">
         <img
@@ -23,9 +25,10 @@ export default class DetailView extends React.Component {
           <div>Free or for exchange: {this.props.plant.paymentType}</div>
         </div>
 
-
         {this.props.plant.creator !== user._id ? (
-          <div>test</div>
+          <Link to={`/email/${this.props.plant.creator}`}>
+            <button className="btn btn-warning">💌 Contact the owner</button>
+          </Link>
         ) : (
           <div className="card-footer">
             <button onClick={this.props.onDelete} className="btn btn-danger">
