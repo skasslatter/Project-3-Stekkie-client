@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
       <div>
         <div className="empty"></div>
         <footer id="sticky-footer">
-                    <p className="copyright">© Copyright Yvana and Sybille. All rights reserved.</p>
+                    <p className="copyright">© Copyright Yvana and Sybille</p>
         </footer>
       </div>
     );

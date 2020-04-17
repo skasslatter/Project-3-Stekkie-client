@@ -108,7 +108,7 @@ class AddPlant extends React.Component {
             <form onSubmit={this.handleSubmit} ref={this.formRef}>
               <h1>Add a plant</h1>
               <div className="form-group">
-                <label>Name:</label>
+                <h6>Name:</h6>
                 <Autosuggest
                   suggestions={this.state.suggestions}
                   onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -123,15 +123,15 @@ class AddPlant extends React.Component {
                 <input type="hidden" name="plantApiId" value={this.state.plantApiId}/>
               </div>
               <div className="form-group">
-                <label>Your title:</label>
+                <h6>Your title:</h6>
                 <input type="text" name="title" className="form-control" />
               </div>
               <div className="form-group">
-                <label>Image Url:</label>
+                <h6>Image Url:</h6>
                 <input type="file" name="photo" className="form-control" />
               </div>
               <div className="form-group">
-                <label>Short description:</label>
+                <h6>Short description:</h6>
                 <input
                   type="text"
                   name="description"
@@ -139,7 +139,7 @@ class AddPlant extends React.Component {
                 />
               </div>
               <div className="form-group">
-                <label>Payment type (please choose)</label>
+                <h6>Payment type (please choose)</h6>
                 <select name="paymentType" className="form-control">
                   <option value="exchange">Exchange</option>
                   <option value="free">Free</option>
