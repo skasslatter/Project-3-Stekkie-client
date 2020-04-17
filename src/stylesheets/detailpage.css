@@ -14,7 +14,7 @@
 }
 
 .detailview {
-  border: none;
+  border: none!important;
   padding-bottom: 4vh!important;
 }
 
@@ -22,4 +22,11 @@
   color:black;
   font-weight: 200;
   text-transform: capitalize;
+}
+
+.bg-image-detail {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),  url("https://source.unsplash.com/M90V5H40gRg");
+  background-size: cover;
+  background-position: center;
+  max-width: 40%!important;
 }

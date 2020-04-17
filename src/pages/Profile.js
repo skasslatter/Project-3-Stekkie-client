@@ -54,8 +54,8 @@ class Profile extends Component {
           <Redirect to="/login" />
         ) : (
           <div>
-            <div class="hero-image-profile">
-              <div class="hero-text">
+            <div className="hero-image-profile">
+              <div className="hero-text">
                   <h1>Welcome {user.username}!</h1>{" "}
               </div>
             </div>

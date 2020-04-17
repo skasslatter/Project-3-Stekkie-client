@@ -53,8 +53,8 @@ class SendEmail extends Component {
   render() {
     return (
       <div>
-        <div class="hero-image-email">
-          <div class="hero-text">
+        <div className="hero-image-email">
+          <div className="hero-text">
             <h1>
               Contact the gardener <span>🌼</span>
             </h1>

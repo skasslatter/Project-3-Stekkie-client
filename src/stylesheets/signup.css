@@ -29,10 +29,11 @@
 
   
 .bg-image {
-    background-image: url("https://source.unsplash.com//70l1tDAI6rM");
+    background-image: url("https://source.unsplash.com/70l1tDAI6rM");
     background-size: cover;
     background-position: center;
   }
+
   
 .login-heading {
     font-weight: 300;
