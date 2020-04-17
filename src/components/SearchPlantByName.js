@@ -16,8 +16,8 @@ class SearchPlantByName extends Component {
     return (
       <div>
         <input
-          className="search-bar input is-primary"
-          placeholder="Search for a plant..."
+          className="search-name"
+          placeholder="Plant name..."
           type="text"
           name="text"
           onChange={(event) => this.handleOnChange(event)}

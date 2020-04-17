@@ -114,30 +114,35 @@ class Marketplace extends Component {
           <div>
             <div class="hero-image">
               <div class="hero-text">
-              <h1>
-              Welcome to the Garden <span>🌼</span>
-            </h1>
+                <h1>
+                  Welcome to the Garden <span>🌼</span>
+                </h1>
               </div>
             </div>
-            
-            <h4>I want to:</h4>
 
-            <select
-              name="search"
-              onChange={(event) => this.handleSearchType(event)}
-            >
-              <option value="" selected disabled hidden>
-                Please select
-              </option>
-              <option value="all">see All Plants</option>
-              <option value="name">search by Name</option>
-              <option value="distance">search by Distance</option>
-            </select>
-            {searchComponent}
-            <div className="card-deck">
-              {this.state.plants.map((plant, index) => {
-                return <PlantCard key={index} plant={plant} />;
-              })}
+            <div className="container">
+              <div className="search-header">
+                <div>
+                  <h4 id="search-title">I want to </h4>
+                  <select
+                    name="search"
+                    className="search-select"
+                    onChange={(event) => this.handleSearchType(event)}
+                  >
+                    <option value="all" selected>
+                      see All Plants
+                    </option>
+                    <option value="name">search by Name</option>
+                    <option value="distance">search by Distance</option>
+                  </select>
+                </div>
+                {searchComponent}
+              </div>
+              <div className="card-columns">
+                {this.state.plants.map((plant, index) => {
+                  return <PlantCard key={index} plant={plant} />;
+                })}
+              </div>
             </div>
           </div>
         )}

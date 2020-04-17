@@ -15,14 +15,14 @@ class SearchPlantByName extends Component {
   render() {
     return (
       <div>
-        <label>Search plants by distance</label>
+        {/* <label>Search plants by distance</label> */}
         <select
           name="distance"
-          className="form-control"
+          className="distance-search"
           onChange={(event) => this.handleOnChange(event)}
         >
           <option value="" selected disabled hidden>
-            Please select
+            Select distance
           </option>
           <option value="2000">less than 2 km away</option>
           <option value="5000">less than 5 km away</option>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Axios from "axios";
 import qs from "querystring";
+import "../stylesheets/email.css";
 
 class SendEmail extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class SendEmail extends Component {
             }
         }
     }
+
     handleInput(event) {
         let dataCopy = { ...this.state.data };
         dataCopy[event.target.name] = event.target.value;
@@ -22,6 +24,7 @@ class SendEmail extends Component {
           data: dataCopy,
         });
       }
+
     handleSubmit(e){
         let recipient = this.props.match.params.id
         console.log(recipient) 
@@ -46,14 +49,47 @@ class SendEmail extends Component {
             console.log(error);
           });  
     }
+
     render() {
         return (
             <div>
-              <div >
-                    <input type="text" id="subject" name="subject" value={this.state.subject} onChange={this.handleInput} placeholder="Subject" /><br/>
-                    <input type="email" id="email" name="email" value={this.state.email} onChange={this.handleInput} placeholder="Email" /><br/>
-                    <textarea name="text" id="text" name="text" value={this.state.text} onChange={this.handleInput} cols="30" rows="10" /><br/>
-                    <button onClick={this.handleSubmit} type="submit">Send email</button>
+            <div class="hero-image-email">
+              <div class="hero-text">
+              <h1>
+              Contact the gardener <span>🌼</span>
+              </h1>
+            </div>
+            </div>
+              <div className="email">
+              <div className="form-group">
+                    <input 
+                    type="text" 
+                    id="subject" 
+                    name="subject" 
+                    value={this.state.subject} 
+                    onChange={this.handleInput} 
+                    placeholder="Subject" /><br/>
+                    </div>
+                    <div className="form-group">
+                    <input 
+                    type="email" 
+                    id="email" name="email" 
+                    value={this.state.email} 
+                    onChange={this.handleInput} 
+                    placeholder="Email" /><br/>
+                    </div>
+                    <div className="form-group">
+                    <textarea 
+                    name="text" 
+                    id="text" name="text" 
+                    value={this.state.text} 
+                    onChange={this.handleInput} 
+                    placeholder="I love your plant"
+                    cols="30" 
+                    rows="10" /><br/>
+                    </div>
+                    
+                    <button onClick={this.handleSubmit} type="submit" className="btn btn-success">Send email</button>
                 </div>
             </div>
         )
@@ -61,3 +97,4 @@ class SendEmail extends Component {
 }
 
 export default SendEmail
+

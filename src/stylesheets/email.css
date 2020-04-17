@@ -1,0 +1,13 @@
+.hero-image-email {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/mathyas-kurmann-fb7yNPbT0l8-unsplash.jpg);
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 2vh;
+}
+
+.email {
+  margin-top: 2vh;
+}

@@ -33,7 +33,9 @@ export default class DetailPage extends React.Component {
         {!this.state.plant && <h1>Loading...</h1>}
         {this.state.plant && 
         <DetailView 
-        plant={this.state.plant} />}
+        plant={this.state.plant} 
+        api={this.state.apiInfo} 
+        />}
       </div>
     );
   }

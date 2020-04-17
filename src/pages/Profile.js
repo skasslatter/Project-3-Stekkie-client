@@ -60,10 +60,10 @@ class Profile extends Component {
               </div>
             </div>
 
-            <div>
+            <div className="container">
               <h4>These are your plants:</h4>
 
-              <div className="card-deck">
+              <div className="card-columns">
                 {userPlants.map((plant, index) => {
                   return (
                     <PlantCard

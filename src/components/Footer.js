@@ -1,26 +1,16 @@
-import "../stylesheets/footer.css"
+import "../stylesheets/footer.css";
 
-import React from 'react';
+import React from "react";
 
 export default class Footer extends React.Component {
-    render(){
-        return (
-            <div>
-            <div className="empty"></div>
-            <footer id="sticky-footer">
-            <div className="bottom section-padding">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12 text-center">
-                            <div className="copyright">
-                                <p>© Copyright Yvana and Sybille. All rights reserved.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  render() {
+    return (
+      <div>
+        <div className="empty"></div>
+        <footer id="sticky-footer">
+                    <p className="copyright">© Copyright Yvana and Sybille. All rights reserved.</p>
         </footer>
-        </div>
-        )
-    }
+      </div>
+    );
+  }
 }

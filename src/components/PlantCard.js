@@ -23,10 +23,6 @@ export default class PlantCard extends React.Component {
         <div className="card-body">
           <h3 className="card-title">{this.props.plant.title}</h3>
           {distanceComponent}
-
-
-
-          <p>Click for more information</p>
         </div>
         </Link>
 
@@ -35,7 +31,7 @@ export default class PlantCard extends React.Component {
               <p>You want this plant? </p>
               <Link to={`/email/${this.props.plant.creator}`}>
                 <button className="btn btn-warning">
-                  Click here to contact the plant owner
+                💌 Contact the owner
                 </button>
               </Link>
             </div>
