@@ -192,11 +192,12 @@ export default class Signup extends React.Component {
                     </div> */}
                     <div className="form-group">
                       <label>Home Address</label>
-                      <div>
+                      <div >
                         <GooglePlacesAutocomplete
-                          className="form-control"
+                          
                           // onSelect={console.log}
                           onSelect={this.handleAddressInput}
+                          className="address-field"
                         />
 
                         {/* <input
