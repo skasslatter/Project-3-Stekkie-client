@@ -1,7 +1,7 @@
 import React from "react";
 import { getUser } from "../utils/auth";
 import { Link } from "react-router-dom";
-
+import "../stylesheets/detailpage.css";
 
 export default class DetailView extends React.Component {
   render() {
@@ -9,20 +9,20 @@ export default class DetailView extends React.Component {
     return (
       <div className="card detailview">
         <img
-          className="card-img-top"
+          className="card-img-top detail-img"
           src={this.props.plant.imgPath}
           alt="Card image cap"
         />
         <div className="card-body">
           <h3 className="card-title">{this.props.plant.title}</h3>
           <h6 className="card-title">
-            Scientific name: {this.props.plant.name}
+            Scientific name: <span className="detail-span">{this.props.plant.name}</span>
           </h6>
           <h6 className="card-title">
-            Family name: {this.props.api.family_common_name}
+            Family name: <span className="detail-span">{this.props.api.family_common_name}</span>
           </h6>
-          <div>Description: {this.props.plant.description}</div>
-          <div>Free or for exchange: {this.props.plant.paymentType}</div>
+          <h6 className="card-title">Description:<span className="detail-span"> {this.props.plant.description}</span></h6>
+          <h6 className="card-title">Free or for exchange: <span className="detail-span">{this.props.plant.paymentType}</span></h6>
         </div>
 
         {this.props.plant.creator !== user._id ? (

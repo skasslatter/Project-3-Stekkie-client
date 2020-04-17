@@ -61,7 +61,7 @@ class Profile extends Component {
             </div>
 
             <div className="container">
-              <h4>These are your plants:</h4>
+              <h4>The plants you want to share:</h4>
 
               <div className="card-columns">
                 {userPlants.map((plant, index) => {
@@ -78,7 +78,7 @@ class Profile extends Component {
               </div>
               <div>
                 <Link to="/add-plant" className="caption btn btn-success">
-                  Add another plant
+                  Add your plants
                 </Link>
               </div>
             </div>

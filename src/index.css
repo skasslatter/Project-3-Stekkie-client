@@ -26,6 +26,7 @@ h3 {
 h4, h6 {
   color: rgb(219 153 90)!important;
   margin-top: 3vh!important;
+  margin-bottom: 3vh!important;
 }
 
 .btn-warning, .btn-danger {

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+
+.detail-img {
+  height: 40vh;
+  width: auto!important;
+  align-self: center;
+  margin-top: 4vh;
+}
+
+.card-body h3{
+  text-transform: capitalize;
+  font-family: 'Amatic SC', cursive;
+  font-size: 3rem;
+}
+
+.detailview {
+  border: none;
+  padding-bottom: 4vh!important;
+}
+
+.detail-span {
+  color:black;
+  font-weight: 200;
+  text-transform: capitalize;
+}
