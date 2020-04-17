@@ -10,4 +10,22 @@
 
 .email {
   margin-top: 2vh;
+  width: 40vw;
+}
+
+.email-container {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 300px) {
+  .email {
+    width: 66vw;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .email {
+    width: 40vw;
+  }
 }
