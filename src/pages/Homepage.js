@@ -1,6 +1,5 @@
 import "../stylesheets/homepage.css";
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default class Homepage extends React.Component {
   render() {

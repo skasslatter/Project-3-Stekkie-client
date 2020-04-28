@@ -1,35 +1,3 @@
-/* .list-img {
-  align-self: center;
-}
-
-.card-link {
-  margin-top: 3vh;
-}
-
-.detailview {
-  padding: 3vh;
-  border: 0px!important;
-}
-
-@media screen and (min-width: 576px) {
-  .card-deck .card {
-    flex: none!important;
-}
-}
-
-.card-img, .card-img-top, .card-img-bottom {
-  width: 30vw!important;
-}
-
-.card-img-top {
-  align-self: center;
-} 
-
-.card {
-  margin: 4vh!important;
-}
-*/
-
 .hero-image-marketplace {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/annie-spratt-ncQ2sguVlgo-unsplash.jpg);
   height: 45vh;
@@ -88,7 +56,6 @@
 }
 
 .distance-search {
-  /* display: inline; */
   margin-top: 2vh;
   height: 40px !important;
   inline-size: fit-content !important;
