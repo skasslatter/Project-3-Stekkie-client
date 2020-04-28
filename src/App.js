@@ -10,8 +10,10 @@ import Profile from "./pages/Profile";
 import Marketplace from "./pages/Marketplace";
 import AddPlant from "./pages/AddPlant";
 import DetailPage from "./pages/Detailpage";
-// import PrivateChat from "./pages/PrivateChat";
 import SendEmail from "./pages/SendEmail";
+import UpdatePlant from "./pages/UpdatePlant";
+// import PrivateChat from "./pages/PrivateChat";
+
 
 class App extends React.Component {
   render() {
@@ -25,6 +27,7 @@ class App extends React.Component {
           <Route path="/profile" component={Profile} />
           <Route path="/add-plant" component={AddPlant} />
           <Route path="/marketplace" component={Marketplace} />
+          <Route path="/plants/:id/update" component={UpdatePlant} />
           <Route path="/plants/:id" component={DetailPage} />
           {/* <Route path="/chat/private" component={PrivateChat} /> */}
           <Route path="/email/:id" component={SendEmail}/>

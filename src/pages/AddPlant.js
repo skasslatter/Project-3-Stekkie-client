@@ -45,7 +45,6 @@ class AddPlant extends React.Component {
   }
 
   onNameChange = (event, { newValue }) => {
-    // debugger
     this.setState({
       name: newValue,
     });
@@ -93,7 +92,7 @@ class AddPlant extends React.Component {
     const user = getUser();
     const autosuggestProps = {
       name: "name",
-      placeholder: "Type to search for the scientific name of your plant",
+      placeholder: "Type to search for the name of your plant",
       value: this.state.name,
       onChange: this.onNameChange,
     };
@@ -116,7 +115,7 @@ class AddPlant extends React.Component {
                               <form onSubmit={this.handleSubmit} ref={this.formRef}>
                                 <h1>Add a plant</h1>
                                 <div className="form-group">
-                                  <h6>Name:</h6>
+                                  <h6>Scientific Name:</h6>
                                   <Autosuggest
                                     suggestions={this.state.suggestions}
                                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -131,7 +130,7 @@ class AddPlant extends React.Component {
                                   <input type="hidden" name="plantApiId" value={this.state.plantApiId} />
                                 </div>
                                 <div className="form-group">
-                                  <h6>Your title:</h6>
+                                  <h6>Your personal title:</h6>
                                   <input type="text" name="title" className="form-control" />
                                 </div>
                                 <div className="form-group">
