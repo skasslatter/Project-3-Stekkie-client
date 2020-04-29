@@ -28,7 +28,12 @@ class Marketplace extends Component {
   //handles the drop down search menu
   handleSearchType(search) {
     let selectedSearch = search.target.value;
-    this.getAllPlants();
+    if (selectedSearch === "all" || selectedSearch === "name") {
+      this.getAllPlants();
+    }
+    else {
+      this.handleSearchByDistance(2000)
+    }
     this.setState({ searchType: selectedSearch });
   }
 
@@ -88,13 +93,16 @@ class Marketplace extends Component {
 
   render() {
     let user = getUser();
-
     let searchComponent = <div></div>;
+
     if (this.state.searchType === "all") {
       searchComponent = <div></div>;
     } else if (this.state.searchType === "distance") {
       searchComponent = (
-        <SearchPlantByDistance handleSearch={this.handleSearchByDistance} />
+        <SearchPlantByDistance
+          handleSearch={this.handleSearchByDistance}
+          plants={this.state.plants}
+        />
       );
     } else if (this.state.searchType === "name") {
       searchComponent = (
@@ -104,8 +112,6 @@ class Marketplace extends Component {
 
     return (
       <div>
-        {/* <SearchPlantByName handleSearch={this.handleSearchByName} />
-        <SearchPlantByDistance handleSearch={this.handleSearchByDistance} /> */}
         {!user ? (
           <div>
             <Redirect to="/login" />
