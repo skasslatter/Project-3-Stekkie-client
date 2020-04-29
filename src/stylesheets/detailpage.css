@@ -7,6 +7,10 @@
   margin-top: 4vh;
 }
 
+.card {
+  border: 1.5px solid rgba(0, 0, 0, 0.125)!important;
+}
+
 .card-body h3{
   text-transform: capitalize;
   font-family: 'Amatic SC', cursive;
