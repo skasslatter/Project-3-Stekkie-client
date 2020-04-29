@@ -11,15 +11,9 @@ class Profile extends Component {
     super();
     this.state = {
       userPlants: [],
-      messages: {
-        title: "",
-        all_messages: [],
-        sender_of_message: "",
-        email_sender: ""
-      }
+      messages: []
     };
   }
-
   componentDidMount() {
     let user = getUser()
     Axios({
@@ -41,12 +35,7 @@ class Profile extends Component {
             } else {
               this.setState({
                 userPlants: responsePlants.data.userPlants,
-                messages: {
-                  title: responseMessages.data.messages[0].title,
-                  all_messages: [responseMessages.data.messages[0].message],
-                  sender_of_message: responseMessages.data.messages[0].message_from.username,
-                  email_sender: responseMessages.data.messages[0].message_from.email
-                }
+                messages: responseMessages.data.messages
               });
             } 
           })
@@ -79,7 +68,7 @@ class Profile extends Component {
   render() {
     let user = getUser();
     let userPlants = this.state.userPlants;
-    let messages = this.state.messages.all_messages;
+    let messages = this.state.messages;
     return (
       <div>
         {!user ? (
@@ -117,8 +106,8 @@ class Profile extends Component {
                   <h4>Messages you received from other plant owners</h4>
                   {messages !== null && messages.map((message, index) => (
                     <div className="message">
-                      <h6>{this.state.messages.title}</h6>
-                      <p key={index}>{message}</p><p> from {this.state.messages.sender_of_message} - {this.state.messages.email_sender}</p>
+                      <h6>Someone is interested in your {message.title}</h6>
+                      <p key={index}>{message.message}</p><p> from {message.message_from.username} - {message.message_from.email}</p>
                       </div>
                   ))}
                 </div>
