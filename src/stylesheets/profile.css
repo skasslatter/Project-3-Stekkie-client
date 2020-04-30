@@ -1,0 +1,11 @@
+.message-inbox {
+    min-height: 20vh;
+    margin-bottom: 3vh;
+}
+
+.message {
+    border: solid 2px rgba(0,0,0,0.5);
+    padding: 1%;
+    min-width: 30vw;
+    background-color: rgba(207, 235, 223, 0.5);
+}

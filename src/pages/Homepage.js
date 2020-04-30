@@ -29,7 +29,7 @@ export default class Homepage extends React.Component {
               <div className="col-md-6 how-img">
                 <img
                   src="/annie-spratt-8mqOw4DBBSg-unsplash.jpg"
-                  class="rounded-circle img-fluid"
+                  className="rounded-circle img-fluid"
                   alt=""
                 />
               </div>
