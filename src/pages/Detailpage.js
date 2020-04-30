@@ -159,7 +159,7 @@ export default class DetailPage extends React.Component {
                       />
 
                     </div>
-                    <br></br><button onClick={this.sendMessage}>Start swapping!</button>
+                    <button className="btn btn-success" onClick={this.sendMessage}>Start swapping!</button>
                   </div>
                 ) : (
                     <div >
