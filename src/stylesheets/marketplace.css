@@ -57,10 +57,15 @@
 
 .distance-search {
   margin-top: 2vh;
+  margin-bottom: 2vh;
   height: 40px !important;
   inline-size: fit-content !important;
 }
 
 .search-header {
   margin: 6vh 0px;
+}
+
+.markerComponent {
+  font-size: x-large;
 }
