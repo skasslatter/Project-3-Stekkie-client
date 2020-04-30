@@ -28,7 +28,7 @@ export default class PlantCard extends React.Component {
         {!this.props.onDelete ? (
           <div className="card-footer">
             <p>You want this plant? </p>
-            <Link to={`/email/${this.props.plant.creator}`}>
+            <Link to={`/plants/${this.props.plant._id}`}>
               <button className="btn btn-warning">💌 Contact the owner</button>
             </Link>
           </div>

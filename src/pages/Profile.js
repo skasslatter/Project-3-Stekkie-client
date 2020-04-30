@@ -5,14 +5,15 @@ import { Redirect, withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 import PlantCard from "../components/PlantCard";
 import "../stylesheets/profile.css";
+import qs from "querystring";
 
 class Profile extends Component {
   constructor() {
     super();
     this.state = {
       userPlants: [],
-      messages: []
-    };
+      messages: [],     
+    }
   }
   componentDidMount() {
     let user = getUser()
@@ -28,7 +29,7 @@ class Profile extends Component {
           withCredentials: true
         })
           .then((responseMessages) => {
-            if (responseMessages.data.messages.length === 0){
+            if (responseMessages.data.messages.length === 0) {
               this.setState({
                 userPlants: responsePlants.data.userPlants
               })
@@ -37,7 +38,7 @@ class Profile extends Component {
                 userPlants: responsePlants.data.userPlants,
                 messages: responseMessages.data.messages
               });
-            } 
+            }
           })
           .catch((err) => {
             console.log(err);
@@ -64,7 +65,6 @@ class Profile extends Component {
         console.log(err);
       });
   };
-
   render() {
     let user = getUser();
     let userPlants = this.state.userPlants;
@@ -106,9 +106,9 @@ class Profile extends Component {
                   <h4>Messages you received from other plant owners</h4>
                   {messages !== null && messages.map((message, index) => (
                     <div className="message">
-                      <h6>Someone is interested in your {message.title}</h6>
-                      <p key={index}>{message.message}</p><p> from {message.message_from.username} - {message.message_from.email}</p>
-                      </div>
+                      <h6>{message.title}</h6>
+                      <p key={message._id}>{message.message}</p><p> from {message.message_from.username} - {message.message_from.email}</p>
+                    </div>
                   ))}
                 </div>
               </div>
