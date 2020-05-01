@@ -48,8 +48,8 @@ export default class Homepage extends React.Component {
                 <p className="text-muted">
                   Plant lovers have always shared the bounty over the backyard
                   fence or at local garden clubs. But now you can do it online,
-                  so you can share and swap with more people than friends &
-                  family.
+                  so you can share and swap, not just with your friends &
+                  family, but with people from all over.
                 </p>
               </div>
               <div className="col-md-6 how-img">
@@ -71,7 +71,7 @@ export default class Homepage extends React.Component {
               <div className="col-md-6">
                 <h4>Get in contact with other plant lovers</h4>
                 <p className="text-muted">
-                  When you found your perfect match, get in contact with it's
+                  When you have found your perfect match, get in contact with it's
                   caretaker and let the swap begin.
                 </p>
               </div>
