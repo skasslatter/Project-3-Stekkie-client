@@ -11,8 +11,11 @@ You can check the application here: https://stekkie.netlify.app/
 <b>Created by:</b> Yvana Wagter and Sybille Kasslatter - two students of Ironhack Bootcamp in Amsterdam in April 2020.
 
 
-
-
+![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/stekkie1_x9om7c.png)
+![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/stekkie2_ehodfc.png)
+![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/stekkie3_symx3e.png)
+![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892814/screenshots/Screenshot_2020-04-30_at_09.56.25_omd8yh.png)
+![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/stekkie5_jueh1y.png)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
