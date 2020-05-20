@@ -1,15 +1,22 @@
 <b>Stekkie: Client part</b>
 
 The third and the final project during our Ironhack bootcamp. Stekkie is a plant swapping app, where users can sign up to offer their plants they want to swap.
+In the marketplace the user will be able to see all other plants and have the possibility to filter them by name or by distance. If an user wants to filter the plants by distance, he will be able to see the plants on a map thanks to the intergration with the GoogleMpasApi.
 
 <b>Used technologies:</b>
 
 React | Express | NodeJS | MongoDB | Bootstrap | CSS | HTML
 
+APIs: GoogleMaps API, Treffle Plant API
+
 You can check the application here: https://stekkie.netlify.app/
 
-<b>Created by:</b> Yvana Wagter and Sybille Kasslatter - two students of Ironhack Bootcamp in Amsterdam in April 2020.
+<b>Created by:</b> 
+Yvana Wagter and Sybille Kasslatter - two students of Ironhack Bootcamp in Amsterdam in April 2020.
 
+<b>Test Login:</b>
+`username: TestUser`
+`pwd: Test2020!`
 
 ![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/stekkie1_x9om7c.png)
 ![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/stekkie2_ehodfc.png)
