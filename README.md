@@ -18,7 +18,7 @@ Yvana Wagter and Sybille Kasslatter - two students of Ironhack Bootcamp in Amste
 `username: TestUser`
 `pwd: Test2020!`
 
-![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/stekkie1_x9om7c.png)
+![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/ironhack/stekkie1_x9om7c.png)
 ![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/stekkie2_ehodfc.png)
 ![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892901/screenshots/stekkie3_symx3e.png)
 ![alt text](https://res.cloudinary.com/dwnm4mxrr/image/upload/v1589892814/screenshots/Screenshot_2020-04-30_at_09.56.25_omd8yh.png)
